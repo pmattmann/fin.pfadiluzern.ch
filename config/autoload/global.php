@@ -9,9 +9,10 @@ return [
         'to_name' => getenv('to_name'),
 
         'kassier' => [
-            'Pirmin Mattmann',
-            'Spitalstrasse 25',
-            '6004 Luzern'
+            'Sekretariat',
+            'Pfadi Luzern',
+            'Bireggstrasse 36',
+            '6003 Luzern'
         ],
         
         'konten' => [
