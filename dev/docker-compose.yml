@@ -1,0 +1,9 @@
+zf:
+  build: .
+  dockerfile: Dockerfile
+  ports:
+   - "8080:80"
+  volumes:
+   - ..:/app
+  working_dir: /app
+  entrypoint: ./dev/docker-start.sh

@@ -1,0 +1,103 @@
+
+<div class="row">
+    <div class="col-md-12 visible-print-block">
+        <pre style="
+            font-size: 5mm;
+            padding-left: 11cm;
+            padding-top: 4cm;
+            padding-bottom: 7cm
+        "><?php
+            foreach($this->fin['kassier'] as $row) {
+                echo $row;
+                echo PHP_EOL;
+            }
+        ?></pre>
+        <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 hidden-print">
+        <h1 style="margin: 10px 0 20px 15px;">Spesen gemeldet</h1>
+    </div>
+    <div class="col-md-12 visible-print-block">
+        <h1 style="margin: 10px 0 20px 15px;">Spesen Pfadi Luzern</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 hidden-print">
+        <p style="font-style: italic; font-size: 25px; color: red;">
+            <b>Dieses Papier unbedingt drucken!</b>
+        </p>
+    </div>
+    <div class="col-md-12">
+        <p style="font-style: italic; font-size: 20px;">
+            Belege bitte aufkleben und anschliessend dem Kassier abgeben.
+        </p>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><div class="hidden-print">Details</div></h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <table>
+                        <tr>
+                            <td><?php echo $this->vorname; ?></td>
+                            <td width="10px"> </td>
+                            <td><?php echo $this->nachname; ?></td>
+                            <td width="30px"> </td>
+                            <td><?php echo $this->pfadiname; ?></td>
+                            <td width="30px"> </td>
+                            <td><?php echo $this->mail; ?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"><?php echo $this->bank; ?></td>
+                            <td colspan="1"><?php echo $this->iban; ?></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-xs-12">
+                    <h3>Spesen:</h3>
+                    <table>
+                        <?php $idx = 1; ?>
+                        <?php foreach($this->spesen as $spese): ?>
+
+                            <tr>
+                                <td width="50"><?php echo $idx++ ?></td>
+                                <td width="150"><?php echo date('d.m.Y', strtotime($spese['datum'])) ?></td>
+                                <td width="100"><?php echo $spese['konto'] ?></td>
+                                <td width="150"><?php echo number_format($spese['betrag'], 2, '.', '\'') ?> Fr.</td>
+                                <td><?php echo $spese['bezeichnung'] ?></td>
+                            </tr>
+
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12 hidden-print">
+        <a href="<?php echo $this->url('spesen'); ?>" class="btn btn-default pull-right">Zurück</a>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    window.onload = function () {
+        setTimeout(function(){
+            window.print();
+        }, 2000)
+    }
+</script>
+

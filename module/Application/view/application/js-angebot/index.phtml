@@ -1,0 +1,126 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 style="margin: 10px 0 20px 15px;">J+S Angebot melden</h1>
+    </div>
+</div>
+
+<?php
+    // Set attributes
+    $this->form->setAttribute('method', 'post');
+    $this->form->setAttribute('class', 'form-horizontal');
+    $this->form->prepare();
+
+
+    echo $this->form()->openTag($this->form);
+?>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="btn-group pull-right" style="margin-top: -8px;">
+                    <?php echo $this->formCheckbox($this->form->get('remember')); ?>
+                    <?php echo $this->formLabel($this->form->get('remember')); ?>
+                </div>
+                <h3 class="panel-title">Coach</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('vorname')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('vorname')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('nachname')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('nachname')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('pfadiname')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('pfadiname')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('mail')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('mail')); ?>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('bank')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('bank')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('iban')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('iban')); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Angebot</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('angebot-nr')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('angebot-nr')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('angebot-pdf')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('angebot-pdf')); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <?php echo $this->formElement($this->form->get('clear')); ?>
+            <?php echo $this->formSubmit($this->form->get('submit')); ?>
+        </div>
+    </div>
+</div>
+
+
+<script type="application/javascript">
+    window.onload = function(){
+        var el = document.querySelector('#<?php echo $this->form->getName(); ?>-clear');
+        el.onclick = function(event) {
+            event.stopPropagation();
+
+            document.querySelector('.pfadiname').value = '';
+            document.querySelector('.vorname').value = '';
+            document.querySelector('.nachname').value = '';
+            document.querySelector('.mail').value = '';
+            document.querySelector('.bank').value = '';
+            document.querySelector('.iban').value = '';
+
+            document.querySelector('.angebot-nr').value = '';
+            document.querySelector('.angebot-pdf').value = '';
+        };
+    };
+</script>
+
+
+<?php
+    echo $this->formElement($this->form->get('csrf'));
+
+    echo $this->form()->closeTag();
+?>

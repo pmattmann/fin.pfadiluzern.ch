@@ -1,0 +1,45 @@
+<table>
+    <tr>
+        <td width="150">Pfadiname</td>
+        <td><?php echo $this->data['pfadiname']; ?></td>
+    </tr>
+    <tr>
+        <td width="150">Vorname</td>
+        <td><?php echo $this->data['vorname']; ?></td>
+    </tr>
+    <tr>
+        <td width="150">Nachname</td>
+        <td><?php echo $this->data['nachname']; ?></td>
+    </tr>
+    <tr>
+        <td width="150">Mail</td>
+        <td><?php echo $this->data['mail']; ?></td>
+    </tr>
+</table>
+<hr />
+<table>
+    <tr>
+        <td width="150">Bank</td>
+        <td><?php echo $this->data['bank']; ?></td>
+    </tr>
+    <tr>
+        <td width="150">IBAN</td>
+        <td><?php echo $this->data['iban']; ?></td>
+    </tr>
+</table>
+<hr />
+
+<table>
+<?php $idx = 1; ?>
+<?php foreach($this->data['spesen'] as $spese): ?>
+
+    <tr>
+        <td width="50"><?php echo $idx++ ?></td>
+        <td width="150"><?php echo date('d.m.Y', strtotime($spese['datum'])) ?></td>
+        <td width="100"><?php echo $spese['konto'] ?></td>
+        <td width="150"><?php echo number_format($spese['betrag'], 2, '.', '\'') ?> Fr.</td>
+        <td><?php echo $spese['bezeichnung'] ?></td>
+    </tr>
+
+<?php endforeach; ?>
+</table>

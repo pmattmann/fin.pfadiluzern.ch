@@ -1,0 +1,110 @@
+<?= $this->doctype() ?>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle('fin.pfadiluzern.ch')->setSeparator(' - ')->setAutoEscape(false) ?>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/style.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+
+        <!-- Scripts -->
+        <?= $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-3.1.0.min.js'))
+        ?>
+
+        <style>
+            @media print {
+                .hidden-print {
+                    display: none !important;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hidden-print">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="<?= $this->url('home') ?>">
+                            <img width='98' height='32' alt='fin.pfadiluzern.ch'  style="margin-top: -5px"
+                                 src='data:image/gif;base64,
+    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
+    hwggAAOw=='>
+                        </a>
+                    </div>
+
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="<?php echo (stristr($_SERVER['REQUEST_URI'], 'spesen') > -1)? 'active': ''; ?>">
+                                <a href="<?= $this->url('spesen') ?>" class="nav-spesenabrechnung">Spesenabrechnung</a>
+                            </li>
+                            <li class="<?php echo (stristr($_SERVER['REQUEST_URI'], 'js-angebot') > -1) ? 'active': ''; ?>">
+                                <a href="<?= $this->url('js-angebot') ?>" class="nav-js-angebot">J+S Angebot</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
+            <?= $this->content ?>
+        </div>
+
+        <div class="clearfix"></div>
+        <br />
+        <div class="clearfix"></div>
+        <?= $this->inlineScript() ?>
+    </body>
+</html>

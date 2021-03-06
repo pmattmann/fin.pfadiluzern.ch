@@ -1,0 +1,345 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 style="margin: 10px 0 20px 15px;">Spesenformular</h1>
+    </div>
+</div>
+
+<?php
+    // Set attributes
+    $this->form->setAttribute('method', 'post');
+    $this->form->setAttribute('class', 'form-horizontal');
+    $this->form->prepare();
+
+    echo $this->form()->openTag($this->form);
+?>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="btn-group pull-right" style="margin-top: -8px;">
+                    <?php echo $this->formCheckbox($this->form->get('remember')); ?>
+                    <?php echo $this->formLabel($this->form->get('remember')); ?>
+                </div>
+                <h3 class="panel-title">Antragsteller/in</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('vorname')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('vorname')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('nachname')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('nachname')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('pfadiname')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('pfadiname')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('mail')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('mail')); ?>
+                    </div>
+                </div>
+                <hr />
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('bank')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('bank')); ?>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <?php echo $this->formLabel($this->form->get('iban')); ?>
+                    <div class="col-sm-10">
+                        <?php echo $this->formElement($this->form->get('iban')); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Spesen</h3>
+            </div>
+            <div class="panel-body">
+                <div class="<?php echo $this->form->getName(); ?>-rows">
+
+                    <?php foreach ($this->form->get('spesen') as $spesenItem) : ?>
+                        <fieldset class="item">
+                            <div class="row">
+                                <!--
+                                <div class="col-xs-1">
+                                    <div class="< ?php echo $this->form->getName(); ?>-rownum"></div>
+                                </div>
+                                -->
+                                <div class="col-xs-12">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <?php echo $this->formLabel($spesenItem->get('datum')); ?>
+                                                <div class="col-sm-9 col-md-10">
+                                                    <?php echo $this->formElement($spesenItem->get('datum')); ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php echo $this->formLabel($spesenItem->get('konto')); ?>
+                                                <div class="col-sm-9 col-md-10">
+                                                    <?php echo $this->formElement($spesenItem->get('konto')); ?>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <?php echo $this->formLabel($spesenItem->get('betrag')); ?>
+                                                <div class="col-sm-9 col-md-10">
+                                                    <?php echo $this->formElement($spesenItem->get('betrag')); ?>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <?php echo $this->formLabel($spesenItem->get('bezeichnung')); ?>
+
+                                                <div class="col-sm-9 col-md-10">
+                                                    <?php echo $this->formElement($spesenItem->get('bezeichnung')); ?>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right">
+                                                <a class="btn btn-danger btn-sm row-remove">
+                                                    <i class="glyphicon glyphicon-remove"></i> Löschen
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                        </fieldset>
+                    <?php endforeach; ?>
+
+                </div>
+                <!--
+                < ?php echo $this->formCollection()->renderTemplate($this->form->get('spesen')); ?>
+                -->
+
+                <fieldset>
+                    <div class="row">
+                        <!--
+                        <div class="col-xs-1">
+                        </div>
+                        -->
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+
+                                        <label class="col-sm-3 col-md-2 control-label">Total</label>
+                                        <div class="col-sm-9 col-md-10">
+                                            <input type="text" readonly class="form-control <?php echo $this->form->getName(); ?>-total" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="pull-right">
+                                        <a class="btn btn-success <?php echo $this->form->getName(); ?>-add">
+                                            <i class="glyphicon glyphicon-plus"></i> Add
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-right">
+            <?php echo $this->formElement($this->form->get('clear')); ?>
+            <?php echo $this->formSubmit($this->form->get('submit')); ?>
+        </div>
+    </div>
+</div>
+
+
+<script type="application/javascript">
+    window.onload = function(){
+        var rowid = 0;
+
+        var el = document.querySelector('#<?php echo $this->form->getName(); ?>-clear');
+        el.onclick = function(event) {
+            event.stopPropagation();
+
+            document.querySelector('.pfadiname').value = '';
+            document.querySelector('.vorname').value = '';
+            document.querySelector('.nachname').value = '';
+            document.querySelector('.mail').value = '';
+            document.querySelector('.bank').value = '';
+            document.querySelector('.iban').value = '';
+
+            var datumElms = document.querySelectorAll('.datum');
+            for(var i = 0; i < datumElms.length; i++){ datumElms[i].value = ''; }
+
+            var kontoElms = document.querySelectorAll('.konto');
+            for(var i = 0; i < kontoElms.length; i++){ kontoElms[i].value = ''; }
+
+            var betragElms = document.querySelectorAll('.betrag');
+            for(var i = 0; i < betragElms.length; i++){ betragElms[i].value = ''; }
+
+            var bezeichnungElms = document.querySelectorAll('.bezeichnung');
+            for(var i = 0; i < bezeichnungElms.length; i++){ bezeichnungElms[i].value = ''; }
+        };
+
+        var rows = document.querySelector('.<?php echo $this->form->getName(); ?>-rows');
+        var tpl = document.querySelector('fieldset.<?php echo $this->form->getName(); ?>-template');
+
+        var fieldsets = rows.querySelectorAll('fieldset.item');
+        for(var i = 0; i < fieldsets.length; i++) {
+            initFieldset(fieldsets[i]);
+        }
+
+
+        var add = document.querySelector('.<?php echo $this->form->getName(); ?>-add');
+        add.onclick = function(event) {
+            rowid++;
+
+            var elm = rows.querySelector('[name=\'<?php echo $this->form->getName(); ?>[' + rowid + '][datum]\']');
+            while (elm != null){
+                rowid++;
+                elm = rows.querySelector('[name=\'<?php echo $this->form->getName(); ?>[' + rowid + '][datum]\']');
+            }
+
+
+            event.stopPropagation();
+            var item = tpl.cloneNode(true);
+            item.setAttribute('class', 'item');
+
+            var datum = item.querySelector('.datum');
+            datum.name = datum.name.replace('__placeholder__', rowid);
+            var konto = item.querySelector('.konto');
+            konto.name = konto.name.replace('__placeholder__', rowid);
+            var betrag = item.querySelector('.betrag');
+            betrag.name = betrag.name.replace('__placeholder__', rowid);
+            var bezeichnung = item.querySelector('.bezeichnung');
+            bezeichnung.name = bezeichnung.name.replace('__placeholder__', rowid);
+
+
+            rows.append(item);
+            initFieldset(item);
+            updateTotel();
+        };
+
+
+        function initFieldset(f) {
+            f.querySelector('.row-remove').onclick = function() {
+                event.stopPropagation();
+                rows.removeChild(f);
+                updateTotel();
+            };
+
+            f.querySelector('.betrag').onkeyup = function() {
+                updateTotel();
+            };
+        }
+
+        function updateTotel() {
+            var fieldsets = rows.querySelectorAll('fieldset.item');
+            var total = 0;
+            for(var i = 0; i < fieldsets.length; i++) {
+                var betragElem = fieldsets[i].querySelector('.betrag');
+                var betrag = parseFloat(betragElem.value);
+
+                if(!isNaN(betrag)) {
+                    total += betrag;
+                }
+            }
+
+            document.querySelector('input.<?php echo $this->form->getName(); ?>-total').value = total;
+        }
+
+        updateTotel();
+
+    };
+
+</script>
+
+
+<?php
+    echo $this->formElement($this->form->get('csrf'));
+
+    echo $this->form()->closeTag();
+?>
+
+
+
+
+<?php $spesenItem = $this->form->get('spesen')->getTemplateElement(); ?>
+
+<div style="display: none;">
+    <fieldset class="<?php echo $this->form->getName(); ?>-template">
+        <div class="row">
+            <!--
+            <div class="col-xs-1">
+                <div class="< ?php echo $this->form->getName(); ?>-rownum"></div>
+            </div>
+            -->
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <?php echo $this->formLabel($spesenItem->get('datum')); ?>
+                            <div class="col-sm-9 col-md-10">
+                                <?php echo $this->formElement($spesenItem->get('datum')); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->formLabel($spesenItem->get('konto')); ?>
+                            <div class="col-sm-9 col-md-10">
+                                <?php echo $this->formElement($spesenItem->get('konto')); ?>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <?php echo $this->formLabel($spesenItem->get('betrag')); ?>
+                            <div class="col-sm-9 col-md-10">
+                                <?php echo $this->formElement($spesenItem->get('betrag')); ?>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <?php echo $this->formLabel($spesenItem->get('bezeichnung')); ?>
+
+                            <div class="col-sm-9 col-md-10">
+                                <?php echo $this->formElement($spesenItem->get('bezeichnung')); ?>
+                            </div>
+                        </div>
+                        <div class="pull-right">
+                            <a class="btn btn-danger btn-sm row-remove">
+                                <i class="glyphicon glyphicon-remove"></i> Löschen
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+    </fieldset>
+</div>

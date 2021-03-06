@@ -1,0 +1,41 @@
+
+<div class="row">
+    <div class="col-md-12">
+        <h1 style="margin: 10px 0 20px 15px;">J+S Angebot gemeldet</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Details</h3>
+            </div>
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <?php echo $this->vorname; ?> <?php echo $this->nachname; ?> / <?php echo $this->pfadiname; ?>
+                    <br />
+                    <?php echo $this->mail; ?>
+                </div>
+                <div class="clearfix"></div>
+                <br />
+                <div class="col-xs-2">Angebot:</div>
+                <div class="col-xs-10"><?php echo $this->{'angebot-nr'}; ?></div>
+                <div class="clearfix"></div>
+                <br />
+                <div class="col-xs-2">Bank:</div>
+                <div class="col-xs-10"><?php echo $this->bank; ?></div>
+                <div class="col-xs-2">IBAN:</div>
+                <div class="col-xs-10"><?php echo $this->iban; ?></div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a href="<?php echo $this->url('js-angebot'); ?>" class="btn btn-default pull-right">Zurück</a>
+    </div>
+</div>
+
