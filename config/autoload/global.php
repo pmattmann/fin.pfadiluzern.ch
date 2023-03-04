@@ -26,10 +26,8 @@ return [
             '4120.03'   => '4120 Vorstand - Vorstandsklausur',
             '4120.04'   => '4120 Vorstand - CL Runde 3 (Vorstand)',
             '4120.05'   => '4120 Vorstand - Vorstandssitzungen',
-            '4120.06'   => '4120 Vorstand - Spesen',
 
             '4130'      => '4130 KaLei',
-            '4130.02'   => '4130 KaLei - Spesen',
 
             '4131'      => '4131 Kanal',
             '4131.01'   => '4131 Kanal - Strategietag',
@@ -51,22 +49,20 @@ return [
             '4132.11'   =>  '4132 E-Team - Piostufen Kantonaltag',
             '4132.12'   =>  '4132 E-Team - ES Dankensanlässe',
             '4132.13'   =>  '4132 E-Team - LUGA',
-            '4132.14'   =>  '4132 E-Team - Spesen',
 
             '4133'      =>  '4133 A-Team',
             '4133.01'   =>  '4133 A-Team - Kursaustausch',
             '4133.02'   =>  '4133 A-Team - VKB-Runde',
-            '4133.03'   =>  '4133 A-Team - Spesen',
 
             '4134'      =>  '4134 B-Team',
             '4134.01'   =>  '4134 B-Team - Coachrunde',
             '4134.02'   =>  '4134 B-Team - Betreuungsplattform',
-            '4134.03'   =>  '4134 B-Team - Spesen',
 
             '4135'      =>  '4135 P+I-Team',
             '4135.01'   =>  '4135 P+I-Team - Präventionsrunde',
             '4135.02'   =>  '4135 P+I-Team - Anerkennungsgeschenke Integration',
-            '4135.03'   =>  '4135 P+I-Team - Spesen',
+            
+            '4140'      =>  '4140 Spesen',
 
             '4150'      =>  '4150 Pfadi Forum',
 
