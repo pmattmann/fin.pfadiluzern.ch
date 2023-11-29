@@ -11,8 +11,8 @@ return [
         'kassier' => [
             'Sekretariat',
             'Pfadi Luzern',
-            'Bireggstrasse 36',
-            '6003 Luzern'
+            'Grossmatte Ost 10',
+            '6014 Luzern'
         ],
         
         'konten' => [
@@ -26,6 +26,7 @@ return [
             '4120.03'   => '4120 Vorstand - Vorstandsklausur',
             '4120.04'   => '4120 Vorstand - CL Runde 3 (Vorstand)',
             '4120.05'   => '4120 Vorstand - Vorstandssitzungen',
+            '4120.07'   => '4120 Vorstand - Zielumsetzung',
 
             '4130'      => '4130 KaLei',
 
@@ -34,21 +35,14 @@ return [
             '4131.02'   => '4131 Kanal - Kanaladventure',
             '4131.03'   => '4131 Kanal - Kulturkanal',
             '4131.04'   => '4131 Kanal - Kanalsitzungen',
+            '4131.05'   => '4131 Kanal - Projektreserve',
 
             '4132'      =>  '4132 E-Team',
-            '4132.01'   =>  '4132 E-Team - Kursapero',
-            '4132.02'   =>  '4132 E-Team - ThinkingDay',
-            '4132.03'   =>  '4132 E-Team - Sportturnier',
-            '4132.04'   =>  '4132 E-Team - Huu\' Huu',
-            '4132.05'   =>  '4132 E-Team - Pfaditag',
-            '4132.06'   =>  '4132 E-Team - Jass-Turnier',
-            '4132.07'   =>  '4132 E-Team - Biberstufen Znacht',
-            '4132.08'   =>  '4132 E-Team - Bibertheater',
-            '4132.09'   =>  '4132 E-Team - Wolfsstufen Kantonaltag',
-            '4132.10'   =>  '4132 E-Team - Pfadistufen Kantonaltag',
-            '4132.11'   =>  '4132 E-Team - Piostufen Kantonaltag',
-            '4132.12'   =>  '4132 E-Team - ES Dankensanlässe',
-            '4132.13'   =>  '4132 E-Team - LUGA',
+            '4132.01'   =>  '4132 E-Team - ThinkingDay',
+            '4132.02'   =>  '4132 E-Team - LUGA',    
+            '4132.03'   =>  '4132 E-Team - Pfaditag',
+            '4132.04'   =>  '4132 E-Team - Internationales',
+            '4132.15'   =>  '4132 E-Team - ES Dankensanlässe',
 
             '4133'      =>  '4133 A-Team',
             '4133.01'   =>  '4133 A-Team - Kursaustausch',
@@ -61,13 +55,33 @@ return [
             '4135'      =>  '4135 P+I-Team',
             '4135.01'   =>  '4135 P+I-Team - Präventionsrunde',
             '4135.02'   =>  '4135 P+I-Team - Anerkennungsgeschenke Integration',
-            
+
+            '4136'      =>  '4136 S-Team',
+            '4136.01'   =>  '4136 S-Team - Kursapero',
+            '4136.02'   =>  '4136 S-Team - Roveranlässe',
+            '4136.05'   =>  '4136 S-Team - Huu\'s Huu', 
+            '4136.06'   =>  '4136 S-Team - Jass-Turnier',
+            '4136.07'   =>  '4136 S-Team - Biberstufen Znacht',
+            '4136.08'   =>  '4136 S-Team - Bibertheater',
+            '4136.09'   =>  '4136 S-Team - Wolfsstufen Kantonaltag',
+            '4136.10'   =>  '4136 S-Team - Pfadistufen Kantonaltag',
+            '4136.11'   =>  '4136 S-Team - Piostufen Kantonaltag',
+            '4136.12'   =>  '4136 S-Team - Piomania',
+            '4136.13'   =>  '4136 S-Team - S Dankensanlässe',
+
+            '4138'      =>  '4138 C-Team',
+            '4138.01'   =>  '4138 C-Team - Komm-Arbeit',
+            '4138.02'   =>  '4138 C-Team - Marketing',
+            '4138.04'   =>  '4138 C-Team - Website',
+    
             '4140'      =>  '4140 Spesen',
 
             '4150'      =>  '4150 Pfadi Forum',
 
             '4220'      =>  '4220 Aufnahmetest',
-            '4250'      =>  '4250 Modul Fortbildung',
+            '4250'      =>  '4250 Einführungskurs',
+            '4260'      =>  '4260 Modul Fortbildung',
+            '4280'      =>  '4280 Seiltechnik-Kurs',
 
             '4900'      =>  '4900 Unklar ???'
         ]
