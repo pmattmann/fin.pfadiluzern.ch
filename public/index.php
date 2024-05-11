@@ -1,5 +1,8 @@
 <?php
 
+header("Location: https://forms.gle/J8em6CcDtU51ifiS8");
+exit();
+
 chdir(dirname(__DIR__));
 
 // Composer autoloading
