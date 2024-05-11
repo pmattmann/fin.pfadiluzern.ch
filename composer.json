@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "php": "^7.0",
+        "php": "^8.0",
         "ext-mbstring": "*",
         "laminas/laminas-mvc": "2.0.8",
         "laminas/laminas-cache": "2.0.8",
